@@ -6,7 +6,7 @@ const router = useRouter()
 const productStore = useProductStore()
 
 function visualizar(id) {
-  router.push(`/products/${id}`)
+  router.push(`/product/${id}`)
 }
 </script>
 
@@ -18,7 +18,7 @@ function visualizar(id) {
         <th>#</th>
         <th>Nome</th>
         <th>Preço</th>
-        <td>Ações</td>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +26,31 @@ function visualizar(id) {
         <td>{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>R${{ product.price.toFixed(2) }}</td>
-        <td><button @click="visualizar(product.id)">ver</button></td>
+        <td>
+          <button @click="visualizar(product.id)">ver</button>
+          <button @click="visualizar(product.id)">excluir</button>
+        </td>
       </tr>
     </tbody>
   </table>
 
 </template>
+
+<style scoped>
+table,
+tr,
+th,
+td {
+  border: 2px solid black;
+}
+
+tr,
+td {
+  min-width: 130px;
+}
+
+button {
+  min-width: 65px;
+  background-color: rgb(127, 168, 164);
+}
+</style>

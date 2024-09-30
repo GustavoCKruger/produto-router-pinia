@@ -8,7 +8,7 @@ const counterStore = useCounterStore()
   <div class="about">
     <h1>This is an about page</h1>
     <h2>Meu contador: {{ counterStore.count }}</h2>
-    <button @click="counterStore.increment">+</button>
+    <button @click="counterStore.increment,">+</button>
   </div>
 </template>
 
